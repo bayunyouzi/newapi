@@ -32,13 +32,13 @@ export async function POST(request: Request) {
       return NextResponse.json({ success: false, message: '该邮箱已注册' }, { status: 400 });
     }
 
-    // 创建用户，默认赠送100元
+    // 创建用户，默认赠送5元
     const hashedPassword = await bcrypt.hash(password, 10);
     const user = await prisma.user.create({
       data: {
         email,
         password: hashedPassword,
-        balance: 100.0 // 赠送100元
+        balance: 5.0 // 赠送5元
       }
     });
 

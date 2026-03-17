@@ -150,7 +150,7 @@ export default function AuthModal({ onClose, onSuccess }: { onClose: () => void,
               disabled={loading}
               className="w-full py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 disabled:opacity-50 font-medium transition-colors mt-6 shadow-md shadow-blue-500/30"
             >
-              {loading ? '处理中...' : isLogin ? '登 录' : '注 册 (赠送 100 元)'}
+              {loading ? '处理中...' : isLogin ? '登 录' : '注 册 (赠送 5 元)'}
             </button>
           </form>
 
