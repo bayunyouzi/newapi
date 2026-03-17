@@ -58,7 +58,9 @@ export default function ChatArea({ selectedModelId }: { selectedModelId: string 
 
   const handlePaste = (e: React.ClipboardEvent) => {
     const items = e.clipboardData.items;
-    for (const item of items) {
+    // 使用普通 for 循环替代 for...of 以兼容旧版 TS 配置
+    for (let i = 0; i < items.length; i++) {
+      const item = items[i];
       if (item.type.indexOf("image") !== -1) {
         const file = item.getAsFile();
         if (file) {
@@ -77,7 +79,9 @@ export default function ChatArea({ selectedModelId }: { selectedModelId: string 
     e.preventDefault();
     setIsDragging(false);
     const files = e.dataTransfer.files;
-    for (const file of files) {
+    // 使用普通 for 循环替代 for...of
+    for (let i = 0; i < files.length; i++) {
+      const file = files[i];
       if (file.type.startsWith("image/")) {
         const reader = new FileReader();
         reader.onload = (e) => {
