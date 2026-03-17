@@ -1,6 +1,6 @@
 "use client";
-import { Send, Globe, Paperclip, Coins, RefreshCw, Bell, User } from "lucide-react";
-import { useState } from "react";
+import { Send, Globe, Paperclip, Coins, RefreshCw, Bell, User, X } from "lucide-react";
+import { useState, useRef, useEffect } from "react";
 
 export default function ChatArea({ selectedModelId }: { selectedModelId: string }) {
   const [message, setMessage] = useState("");
